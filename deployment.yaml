@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2026-02-10T04:10:58Z"
+  generation: 1
+  labels:
+    app: zomato
+  name: zomato
+  namespace: raham
+  resourceVersion: "1496"
+  uid: 7de5cdeb-80e4-4ebc-949f-cdea8ec1243f
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: zomato
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: zomato
+    spec:
+      containers:
+      - image: rahamshaik/mydockerprojectfor5pm:myzomatoimage
+        imagePullPolicy: IfNotPresent
+        name: mydockerprojectfor5pm
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: "2026-02-10T04:11:22Z"
+    lastUpdateTime: "2026-02-10T04:11:22Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  - lastTransitionTime: "2026-02-10T04:10:58Z"
+    lastUpdateTime: "2026-02-10T04:11:22Z"
+    message: ReplicaSet "zomato-659f66b944" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: "2026-02-10T04:10:42Z"
+  labels:
+    kubernetes.io/metadata.name: raham
+  name: raham
+  resourceVersion: "1335"
+  uid: 5288b3fb-3dad-44fe-9a89-179fa3c55843
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

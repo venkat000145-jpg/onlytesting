@@ -25,6 +25,6 @@ kops validate cluster --wait 10m
 
 
 
-kops delete cluster --name rahams.k8s.local --yes
+kops delete cluster --name venkats.k8s.local --yes
 
 
